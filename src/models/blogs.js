@@ -1,5 +1,6 @@
 import mongoose from "./index.js";
-import {Status} from '../common/utils.js'
+import {Status} from '../common/utils.js' 
+
 const blogSchema = new mongoose.Schema({
     title:{type:String,required:[true,"Title is required"]},
     imageUrl:{type:String,required:[true,"Image url is required"]},

@@ -9,6 +9,7 @@ router.get('/user',Auth.validate, BlogController.getBlogsByUserId)
 router.put('/status/:id/:status',Auth.validate,Auth.adminGaurd, BlogController.updateBlogStatus)
 router.get('/',Auth.validate,Auth.adminGaurd, BlogController.getAllBlogs)
 router.get('/:id',Auth.validate, BlogController.getBlogById)
+router.delete('/delete/:id', Auth.validate, BlogController.deleteBlog);
 
 
 export default router
