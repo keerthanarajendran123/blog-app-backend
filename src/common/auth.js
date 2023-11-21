@@ -25,9 +25,11 @@ const decodeToken = async(token)=>{
 
 const validate = async(req,res,next)=>{
     let token = req.headers.authorization?.split(" ")[1]
+    console.log('Token:', token); 
     if(token)
     {
         let payload = await decodeToken(token)
+        console.log('Payload:', payload); 
         req.headers.userId = payload.id
         let currentTime = (+new Date())/1000
         
@@ -46,9 +48,11 @@ const validate = async(req,res,next)=>{
 
 const adminGaurd = async(req,res,next)=>{
     let token = req.headers.authorization?.split(" ")[1]
+    console.log('Token:', token);
     if(token)
     {
         let payload = await decodeToken(token)
+        console.log('Payload:', payload);
         if(payload.role==='admin')
             next()
         else
@@ -65,4 +69,5 @@ export default{
     createToken,
     validate,
     adminGaurd
-}
+} 
+
