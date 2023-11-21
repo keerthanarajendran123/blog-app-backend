@@ -9,7 +9,7 @@ router.get('/',(req,res)=>{
     <h1 style="text-align:center">Welcome to Backend of Blog App</h1>`)
 })
 
-router.use('https://blogapp-backend-raoy.onrender.com/blogs',UserRoutes)
+router.use('/user',UserRoutes)
 router.use('/blogs',BlogsRoutes)
 router.use('/dashboard',DashboardRoutes)
 
